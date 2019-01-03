@@ -14,7 +14,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.alert import Alert
 
-spreadSheetPath = '.\\spreadsheets\\'
+spreadSheetPath = './spreadsheets/'
 photoPath = ''
 
 
@@ -38,7 +38,7 @@ folderNum = int(yoko) + 1
 
 ###　ログイン　###
 #################
-browser = webdriver.Chrome()
+browser = webdriver.Chrome(executable_path='./drivers/chromedriver')
 browser.get("https://www.buyma.com/my/sell/new/")
 email = browser.find_element_by_id('txtLoginId')
 email.send_keys('namitaketomi123@gmail.com')
