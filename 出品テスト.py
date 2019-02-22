@@ -168,29 +168,29 @@ while True:
         # actions.select(browser, Select.SEASON.value, id)
 
 
-        ###テーマ
-        class actions(Enum):
-            def select(browser, id, option):
-                # 1st click on the Select-control
-                action = ActionChains(browser)
-                element = browser.find_element_by_id(f'react-select-{id}--value')
-                browser.execute_script("arguments[0].scrollIntoView();", element)
-                action.move_to_element(element).click().perform()
-                time.sleep(1)
-                # 2nd click on the Select-menu-outer option
-                element = browser.find_element_by_id(f'react-select-{id}--option-{option}')
-                action = ActionChains(browser)
-                action.move_to_element(element).click().perform()
-                time.sleep(1)
-        # # import theme infomation
-        # categoryType = xl_sh.cell_value(yoko,6)
-        # print(categoryType)
-        # # open yml file
-        # with open('./constants/テーマ.yml', 'r') as file:
-        #     themeType = yaml.load(file)
-        # id = themeType["theme"][xl_sh.cell_value(yoko,6)]['id']
-        id = 4#日本未入荷
-        actions.select(browser, Select.THEME.value, id)
+        # ###テーマ
+        # class actions(Enum):
+        #     def select(browser, id, option):
+        #         # 1st click on the Select-control
+        #         action = ActionChains(browser)
+        #         element = browser.find_element_by_id(f'react-select-{id}--value')
+        #         browser.execute_script("arguments[0].scrollIntoView();", element)
+        #         action.move_to_element(element).click().perform()
+        #         time.sleep(1)
+        #         # 2nd click on the Select-menu-outer option
+        #         element = browser.find_element_by_id(f'react-select-{id}--option-{option}')
+        #         action = ActionChains(browser)
+        #         action.move_to_element(element).click().perform()
+        #         time.sleep(1)
+        # # # import theme infomation
+        # # categoryType = xl_sh.cell_value(yoko,6)
+        # # print(categoryType)
+        # # # open yml file
+        # # with open('./constants/テーマ.yml', 'r') as file:
+        # #     themeType = yaml.load(file)
+        # # id = themeType["theme"][xl_sh.cell_value(yoko,6)]['id']
+        # id = 4#日本未入荷
+        # actions.select(browser, Select.THEME.value, id)
 
 
         # ### 色とサイズ
